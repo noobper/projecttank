@@ -138,3 +138,11 @@ select.form-control {
 .my-frame {
     border:solid gray 2px;
 }
+
+.fram-order {
+    border: solid black 2px;
+}
+
+.fram-order > thead > tr > td {
+    border: solid black 2px;
+}

@@ -60,7 +60,7 @@
     </div>
     <div class="col-md-6">
         <h3>รายการสั่งซื้อล่าสุด</h3>
-        <table>
+        <table class="fram-order">
         <?php
             $sql='select * from tb_order 
                 inner join tb_transport on tb_order.transport_id = tb_transport.transport_id
@@ -108,7 +108,7 @@
                 </td>
             </tr>
         <?php
-            if ($r2['with_setup']==2) {
+            if ($r['with_setup']==2) {
         ?>
             <tr>
                 <td colspan='3'><a href="installer.php" class="button expanded"><span class="fa fa-search"></span> รายละเอียดช่างติดตั้ง</a></td>
