@@ -2531,7 +2531,7 @@ input[type="checkbox"] {
   line-height: normal;
 }
 input[type="file"] {
-  display: inline;
+  display: inherit;
   border: 0;
   width: auto;
 }

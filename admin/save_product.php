@@ -22,6 +22,16 @@ if (isset($_POST['edit'])) {
         where product_id = '$id' ";
     $q=$objCon->query($sql);
     if ($q) { 
+        
+        if ($_POST['product_type']==5) {
+            $sql = "update tb_list set price = '".$_POST['price']."' 
+                where list_id = '".$_POST['list_id']."' ";
+            $q1 = $objCon->query($sql);
+            
+            if ($q1) {
+                header("location:edit_product.php?id=".$id);
+            }
+        }
         header("location:edit_product.php?id=".$id);
     }
 }
@@ -41,7 +51,7 @@ if (isset($_POST['new'])) {
             $sql="UPDATE tb_product SET picture = '".$imgname."' WHERE product_id = '$id' ";
             $q = $objCon -> query($sql);
             if ($q) {
-                if ($_POST['price']!=''){
+                if ($_POST['produt_type']==5){
                     $sql="insert into tb_list (price,product_id) values ('".$_POST['price']."','$id') ";
                     $q = $objCon -> query($sql);
                     header("location:edit_product.php?id=".$id);

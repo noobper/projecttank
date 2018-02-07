@@ -27,8 +27,8 @@ $(document).ready(function() {
     });
 $('#product_type').change(function () {
     var type = $('#product_type').val();
-    if($('#product_type').val()=='05'){
-        $('.hidden').removeClass('hidden');
+    if(type == 5 ){
+        $('[name=price]').removeClass('hidden');
         $('#pump').addClass('hidden');
         $('[name=need_pump]').prop("checked", false);
     }

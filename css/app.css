@@ -87,10 +87,11 @@ dl.text-middle {
     display: flow-root;
 }
 
-dl.text-middle > dd > input,
+dl.text-middle > dd > input['text'],
+dl.text-middle > dd > input['file'],
 dl.text-middle > dd > select,
 dl.text-middle > dd > textarea {
-    width: auto;
+    width: 100%;
 }
 
 dl.text-middle > dd > input[type="file"] {
@@ -130,4 +131,7 @@ a.red {
 .width-auto {
     width: auto;
     height: auto;
+}
+select.form-control {
+    -webkit-appearance: menulist;
 }

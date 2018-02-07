@@ -19,7 +19,7 @@
             </select>
         </dd>
         <dt>ข้อมูลผลิตภัณฑ์</dt>
-        <dd><textarea name="desciption" rows="3" class="form-control"></textarea></dd>
+        <dd><textarea name="desciption" rows="8" class="form-control"></textarea></dd>
         <dt>บริษัท</dt>
         <dd>
             <select name="product_owner" class="form-control">
@@ -36,8 +36,8 @@
         </dd>
         <dt>รูปภาพ</dt>
         <dd><input type="file" name="picture" class="form-control" accept="image/*" required></dd>
-        <dt><span name="price">ราคา</span></dt>
-        <dd><input type="text" name="price" class="form-control"></dd>
+        <dt><span name="price" class="hidden">ราคา</span></dt>
+        <dd><input type="text" name="price" class="form-control hidden"></dd>
     </dl>
     <input type="submit" value="บันทึก" id="save_product" class="btn btn-primary">
 </div>

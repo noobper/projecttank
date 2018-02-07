@@ -5,7 +5,7 @@
     $q = $objCon->query($sql);
     $r = $q->fetch_assoc();
 ?>
-<img src="../img/<?php echo $r['picture']; ?>" class="pull-left">
+<img src="../img/<?php echo $r['picture']; ?>" class="pull-left" width="400">
     <h2>&emsp;&emsp;แก้ใขอุปกรณ์</h2><br>
     <form action="save_product.php" method="post">
     <input type="hidden" name="edit">
@@ -45,18 +45,33 @@
                 ?>
             </select>
         </dd>
+    <?php if ($r['product_type']==5) { ?>
+        <dt>ราคา</dt>
+        <dd>
+            <?php
+                $sql1="select list_id,price from tb_list where product_id = '".$_GET['id']."' ";
+                $q1=$objCon->query($sql1);
+                $r1=$q1->fetch_assoc();
+            ?>
+            <input type="hidden" name="list_id" value="<?=$r1['list_id'];?>">
+            <input type="text" name="price" value="<?=$r1['price']; ?>" class="form-control">
+        </dd>
+    <?php } ?>
         <dd><input type="submit" value="บันทึก" class="btn btn-primary">
             <a href="save_product.php?id=<?php echo $r['product_id']; ?>" class="btn btn-danger">ลบสินค้านี้</a>
         </dd>
         </form>
     </dl>
-        <form action="save_product.php" method="post"  enctype="multipart/form-data">
-        <input type="hidden" name="change_pic">
-        <input type="hidden" name="id" value="<?php echo $r['product_id']; ?>">
-        <input type="file" name="picture" class="form-control" accept="image/*" required>
-        <input type="submit" value="เปลี่ยนรูป" class="btn btn-default">
+    <div class="col-md-12">
+        <form action="save_product.php" class="form-inline" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="change_pic">
+            <input type="hidden" name="id" value="<?php echo $r['product_id']; ?>">
+            <input type="file" name="picture" class="form-control" accept="image/*" required>
+            <input type="submit" value="เปลี่ยนรูป" class="btn btn-default">
         </form>
-    <br>
+        <hr class="width-100">
+    </div>
+<?php if ($r['product_type']!=5) { ?>
 <table class="table tabl-bordered text-center text-middle width-100">
     <tr>
         <th>No</th>
@@ -120,6 +135,7 @@
     </tr>
 <?php
     }
+}
 ?>
 </table>
 <?php
