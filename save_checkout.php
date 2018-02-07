@@ -28,9 +28,9 @@ require_once('connect/connect.php');
     }
     $with_setup=isset($_POST['with_setup'])?'2':'1';
     $sql = "
-    	INSERT INTO tb_order (order_date,user_id,totalprice,address_id,comment,with_setup)
+    	INSERT INTO tb_order (order_date,user_id,totalprice,address_id,comment,with_setup,transport_id)
 	    VALUES
-        ('".date("Y-m-d H:i:s")."','".$_SESSION["user_id"]."','".$_SESSION["sumtotal"]."',$address_id,'".$_POST['comment']."',$with_setup ) 
+        ('".date("Y-m-d H:i:s")."','".$_SESSION["user_id"]."','".$_SESSION["sumtotal"]."',$address_id,'".$_POST['comment']."',$with_setup,1 ) 
         ";
     $q = $objCon->query($sql);
     if(!$q)
@@ -73,6 +73,7 @@ require_once('connect/connect.php');
     unset($_SESSION['intLine']);
     unset($_SESSION['sumtotal']);
     unset($_SESSION['strQty']);
+    unset($_SESSION['comment']);
     $objCon->close();
 
     header("location:finish_order.php?OrderID=".$order_id);

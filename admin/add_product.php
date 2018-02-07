@@ -36,8 +36,10 @@
         </dd>
         <dt>รูปภาพ</dt>
         <dd><input type="file" name="picture" class="form-control" accept="image/*" required></dd>
-        <dt><span name="price" class="hidden">ราคา</span></dt>
-        <dd><input type="text" name="price" class="form-control hidden"></dd>
+        <dt name="standby">ราคา</dt>
+        <dd name="standby"><input type="text" name="price" class="form-control"></dd>
+        <dt name="standby">สินค้าในคลัง</dt>
+        <dd name="standby"><input type="text" name="stock" class="form-control"></dd>
     </dl>
     <input type="submit" value="บันทึก" id="save_product" class="btn btn-primary">
 </div>

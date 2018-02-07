@@ -26,8 +26,14 @@
   	<div class="text-center">
       <br>
   		<h3><?php echo $item['product_name']; ?></h3>
-      <img class="thumbnail center" src="./img/<?php echo $item['picture'];?>">
+      <img class="thumbnail" src="./img/<?php echo $item['picture'];?>" width="300">
       <br><br>
+      <div class="col-md-6 col-md-offset-3">
+        <h5><?=isset($item['description'])||$item['description']=="-"?$item['description']:''; ?></h5>
+      </div>
+      
+      <br>
+      <br>
   	<?php
     $sql="SELECT * from tb_list WHERE product_id=".$_GET['id']." ";
     // c - check

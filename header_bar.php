@@ -18,7 +18,7 @@
 			  <li><a href="custom.php">สั่งทำขนาดพิเศษ</a></li>
 	        </ul>
       	</li>
-        <li><a href="about.php">เกี่ยวกับเรา</a></li>
+        <!--<li><a href="about.php">เกี่ยวกับเรา</a></li>-->
         <li><a href="blog.php">บทความ</a></li>
         <li><a href="contactus.php">ติดต่อเรา</a></li>
     </ul>
@@ -41,7 +41,7 @@
 	              <hr>
 	            </ul>
           	</li>
-						<li>
+					<li>
 						<?php
 						if (isset($_SESSION['strQty'])) {
 						
@@ -55,7 +55,7 @@
 								<span class="fa fa-shopping-basket fa-lg"> <b> <?=$cart;?></b></span>
 							</a>
 							</div>
-						</li>
+					</li>
 		<?php
 						} 
 		}else { ?>

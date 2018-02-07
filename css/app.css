@@ -135,3 +135,6 @@ a.red {
 select.form-control {
     -webkit-appearance: menulist;
 }
+.my-frame {
+    border:solid gray 2px;
+}

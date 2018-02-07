@@ -14,7 +14,7 @@
       <th>รูป</th>
       <th>ประเภทสินค้า</th>
       <th>ชื่อผลิตภัณฑ์</th>
-      <th>รายละเอียด</th>
+      <th width="30%">รายละเอียด</th>
       <th>บริษัท</th>
       <th></th>
       
@@ -24,10 +24,10 @@
     ?>
     <tr>
       <td><?php echo $r['product_id']; ?></td>
-      <td><img src="../img/<?php echo $r['picture']; ?>" height="150px"></td>
+      <td><img src="../img/<?php echo $r['picture']; ?>" height="150px" class="my-frame"></td>
       <td><?php echo $r['type_name'] ?></td>
       <td><?php echo $r['product_name']; ?></td>
-      <td><?php echo $r['description']; ?></td>
+      <td><?php echo mb_substr($r['description'],0,200,'UTF-8'); ?></td>
       <td><?php echo $r['owner_name'] ?></td>
       <td><a href="edit_product.php?id=<?php echo $r['product_id']; ?>" class="btn btn-success">
         <span class="fa fa-edit"></span> แก้ไข</a>

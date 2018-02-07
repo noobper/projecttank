@@ -75,7 +75,7 @@ while($r2=$q->fetch_assoc())
     <td><?=$r2['type_name'];?></td>
 		<td><?=$r2["product_name"];?></td>
 		<td><?=$r2["capacity"];?></td>
-		<td><?=$r2["price"];?></td>
+		<td><?=number_format($r2["price"]);?></td>
 		<td><?=$r2["qty"];?></td>
 	  </tr>
 	  <?php

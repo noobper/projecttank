@@ -5,7 +5,7 @@
     $q = $objCon->query($sql);
     $r = $q->fetch_assoc();
 ?>
-<img src="../img/<?php echo $r['picture']; ?>" class="pull-left" width="400">
+<img src="../img/<?php echo $r['picture']; ?>" class="pull-left my-frame" width="400">
     <h2>&emsp;&emsp;แก้ใขอุปกรณ์</h2><br>
     <form action="save_product.php" method="post">
     <input type="hidden" name="edit">
@@ -49,13 +49,15 @@
         <dt>ราคา</dt>
         <dd>
             <?php
-                $sql1="select list_id,price from tb_list where product_id = '".$_GET['id']."' ";
+                $sql1="select list_id,price,stock from tb_list where product_id = '".$_GET['id']."' ";
                 $q1=$objCon->query($sql1);
                 $r1=$q1->fetch_assoc();
             ?>
             <input type="hidden" name="list_id" value="<?=$r1['list_id'];?>">
             <input type="text" name="price" value="<?=$r1['price']; ?>" class="form-control">
         </dd>
+        <dt>สินค้าในคลัง</dt>
+        <dd><input type="text" name="stock" value="<?=$r1['stock']; ?>" class="form-control"></dd>
     <?php } ?>
         <dd><input type="submit" value="บันทึก" class="btn btn-primary">
             <a href="save_product.php?id=<?php echo $r['product_id']; ?>" class="btn btn-danger">ลบสินค้านี้</a>

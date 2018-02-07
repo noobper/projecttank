@@ -25,20 +25,23 @@ $(document).ready(function() {
             $('div.list-black > a[href="blog_view.php"]').addClass('active');
         }
     });
+    
+//hide
+if (!$('[name=standby]').hasClass('hidden')) {
+    $('[name=standby]').addClass('hidden');
+}
+//unhide
 $('#product_type').change(function () {
     var type = $('#product_type').val();
     if(type == 5 ){
-        $('[name=price]').removeClass('hidden');
-        $('#pump').addClass('hidden');
-        $('[name=need_pump]').prop("checked", false);
+        $('[name=standby]').removeClass('hidden');
     }
      else
     {
-        
-        if (!$('[name=price]').hasClass('hidden')) {
-            $('[name=price]').addClass('hidden');
+        if (!$('[name=standby]').hasClass('hidden')) {
+            $('[name=standby]').addClass('hidden');
             $('input[name=price]').val('');
-            $('#pump').removeClass('hidden');
+            $('input[name=stock]').val('');
         }
     } 
        

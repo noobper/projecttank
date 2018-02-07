@@ -91,7 +91,7 @@
             
             <tr>
                     <td><?=$r2['type_name']; ?></td>
-                    <td><?=$r2['product_name']; ?> ขนาด <?= number_format($r2['capacity']);?> ลิตร</td>
+                    <td><?=$r2['product_name']; ?><?=!empty($r2['capacity'])?'ขนาด'.number_format($r2['capacity']).'ลิตร':''; ?></td>
                     <td>จำนวน <?=$r2['qty']; ?> ชิ้น</td>
             </tr>
         <?php

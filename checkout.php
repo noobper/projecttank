@@ -97,9 +97,9 @@ require_once('header_bar.php');
           $SumTotal = $SumTotal + $Total;
         ?>
           <tr>
-            <td><?php echo $r["type_name"].'<br>'.$r["product_name"];?></td>
-            <td class="text-center"><?php echo $_SESSION["strQty"][$i];?></td>
-            <td class="text-right"><?php echo number_format($Total);?></td>
+            <td><?= ($r['product_type']==5)?'':$r["type_name"].'<br>';?><?=$r["product_name"];?></td>
+            <td class="text-center"><?= $_SESSION["strQty"][$i];?></td>
+            <td class="text-right"><?= number_format($Total);?></td>
           </tr>
           <?php
           }
